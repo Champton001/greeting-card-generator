@@ -1,22 +1,32 @@
 let name = prompt("A name:");
 let adjective = prompt("An adjective:");
 let noun = prompt("A noun:");
-let place = prompt("A place:");
-let food = prompt("A food:");
+
+let closings = [
+  "You are a legend.",
+  "Stay golden.",
+  "Signs point to awesome.",
+  "Outstanding.",
+  "You are marvelous.",
+];
+
+let style = prompt("Fancy or silly?");
+
+
+function randomNumber(a, b) {
+  return Math.floor(Math.random() * (b - a + 1)) + a;
+}
 
 function makeCard() {
   console.log("Dear " + name + ",");
   console.log("You are as " + adjective + " as a " + noun + ".");
-  console.log("I hope you have fun at " + place + ",");
-  console.log("Enjoy some " + food + "!");
-  console.log("Have an awesome day generator.");
-  
+  let index = randomNumber(0, closings.length - 1);
+  console.log(closings[index]);
+  if (style.toLowerCase() === "fancy") {
+    console.log("Dearest " + name + ",");
+  } else {
+    console.log("YO " + name + "!");
+  }
 }
 
-function makeThankYouCard() {
-	console.log("Dear " + name + ",");
-	console.log("Thank you for being a great friend! ");
-	console.log("Lets meet at " + place + " and eat " + food + "!");
-}
 makeCard();
-makeThankYouCard();

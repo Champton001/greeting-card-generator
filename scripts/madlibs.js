@@ -1,6 +1,9 @@
 let name = prompt("A name:");
 let adjective = prompt("An adjective:");
 let noun = prompt("A noun:");
+let place = prompt("A place:");
+let verb = prompt("A verb:");
+let food = prompt("A food:");
 
 let closings = [
   "You are a legend.",
@@ -19,7 +22,7 @@ function randomNumber(a, b) {
 
 function makeCard() {
   console.log("Dear " + name + ",");
-  console.log("You are as " + adjective + " as a " + noun + ".");
+  console.log("You are as " + adjective + " as a " + noun + " in a " + place + ", " + verb + "ing " + food + ". ");
   let index = randomNumber(0, closings.length - 1);
   console.log(closings[index]);
   if (style.toLowerCase() === "fancy") {

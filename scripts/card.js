@@ -1,41 +1,19 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  //<!-- charset, viewport, your own <title>, the Pico line -->
-</head>
-<body>
-  <header>
-   About Me!!
-  </header>
-  <main>
-    <section id="order-section">
-  <h2>Order a card</h2>
-  
-  <label>A name
-    <input id="name-input" type="text" />
-  </label>
-  
-  <label>A hobby
-    <input id="adjective-input" type="text" />
-  </label>
-  
-  <label>A favorite thing
-    <input id="noun-input" type="text" />
-  </label>
-  
-</section>
+alert("hello world");
 
-<section id="card-section">
-  <article>
-    <p id="card-text">Your About Me will appear here.</p>
-  </article>
-</section>
+let nameInput = document.getElementById("name-input");
+let adjectiveInput = document.getElementById("adjective-input");
+let nounInput = document.getElementById("noun-input");
+let makeButton = document.getElementById("make-button");
+let cardText = document.getElementById("card-text");
 
-  </main>
-  <footer>
-    Made by: Chasity H.
-  </footer>
+function makeCard() {
+  let friendName = nameInput.value;
+  let adjective = adjectiveInput.value;
+  let noun = nounInput.value;
+  cardText.textContent =
+    "Dear " + personReading + ", I really enjoy " + adjective +
+    " by  " + noun + ". Thank you for listening. You Rock!!! ";
+}
 
-  <script src="card.js"></script>
-</body>
-</html>
+makeButton.addEventListener("click", makeCard);
+

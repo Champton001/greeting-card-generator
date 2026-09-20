@@ -24,6 +24,14 @@ function randomNumber(a,b){
 	return Math.floor(Math.random() * (b - a + 1))
 }
 
+function surpriseMe() {
+	let index = randomNumber(0, cardClosings.length - 1);
+	let randomClosing = cardClosing[index];
+	cardText.textContent = randomClosing;
+}
+
+let surpriseButton = document.getElementById("surprise-button");
+surpriseButton.addEventListener("click", surpriseMe);
 
 makeButton.addEventListener("click", makeCard);
 

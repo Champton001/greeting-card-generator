@@ -14,6 +14,8 @@ function makeCard() {
   let noun = nounInput.value;
   let index = randomNumber(0, cardClosings.length - 1);
   let randomClosing = cardClosings[index];
+  let cardSection = document.getElementById("card-section");
+  cardSection.hidden = false;
   console.log(randomClosing);
   cardText.textContent =
     "Dear " + name + ", I really enjoy " + adjective +
@@ -32,6 +34,7 @@ function surpriseMe() {
 
 let surpriseButton = document.getElementById("surprise-button");
 surpriseButton.addEventListener("click", surpriseMe);
+
 
 makeButton.addEventListener("click", makeCard);
 

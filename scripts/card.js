@@ -4,6 +4,7 @@ let nameInput = document.getElementById("name-input");
 let adjectiveInput = document.getElementById("adjective-input");
 let nounInput = document.getElementById("noun-input");
 let makeButton = document.getElementById("make-button");
+let resetButton = document.getElementById("reset-button")
 let cardText = document.getElementById("card-text");
 let cardClosings = ["Goodbye!", "See you later!", "Take care!", "Have a great day!", "Adios!"]
 
@@ -28,13 +29,23 @@ function randomNumber(a,b){
 
 function surpriseMe() {
 	let index = randomNumber(0, cardClosings.length - 1);
-	let randomClosing = cardClosing[index];
+	let randomClosing = cardClosings[index];
 	cardText.textContent = randomClosing;
+}
+
+function resetGenerator() {
+    nameInput.value = "";
+    adjectiveInput.value = "";
+    nounInput.value = "";
+    
+    let cardSection = document.getElementById("card-section");
+    cardSection.hidden = true;
 }
 
 let surpriseButton = document.getElementById("surprise-button");
 surpriseButton.addEventListener("click", surpriseMe);
 
+resetButton.addEventListener("click", resetGenerator);
 
 makeButton.addEventListener("click", makeCard);
 
